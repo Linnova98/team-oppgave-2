@@ -1,0 +1,154 @@
+:root {
+  --size: 720px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #282b30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.game {
+  background-color: #36393e;
+  border-radius: 5px;
+  padding: 20px;
+  display: grid;
+  grid-template: var(--size) / var(--size) auto;
+  width: calc(var(--size) * 1.4);
+}
+
+/* Board style */
+.board {
+  background-color: #4a4c51;
+  display: grid;
+  grid-template-columns: repeat(3, calc(var(--size) / 3));
+  grid-template-rows: repeat(3, calc(var(--size) / 3));
+}
+
+.list {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: #4a4c51;
+}
+
+.board > div {
+  box-shadow: inset 0 0 3px #282b30;
+}
+
+/* Piece style (all) */
+.board div div,
+.list div {
+  background-image: url(https://cdn.discordapp.com/attachments/901041345815252992/905445962804240384/wallpaper-cropped.jpg);
+  background-size: var(--size) var(--size);
+  cursor: pointer;
+}
+
+.board div div {
+  transition: opacity 0.3s, box-shadow 0.3s;
+  opacity: 0;
+  width: calc(var(--size) / 3);
+  height: calc(var(--size) / 3);
+}
+
+.board .show {
+  opacity: 1;
+}
+
+.list div {
+  width: calc(var(--size) / 3);
+  height: calc(var(--size) / 3);
+  margin: 10px auto;
+  box-shadow: 0 0 3px #282b30;
+  transition: opacity 0.3s;
+}
+
+/* Individual pieces */
+.piece-2,
+.piece-5,
+.piece-8 {
+  background-position-x: calc(var(--size) / 3 * 2);
+}
+
+.piece-3,
+.piece-6,
+.piece-9 {
+  background-position-x: calc(var(--size) / 3);
+}
+
+.piece-4,
+.piece-5,
+.piece-6 {
+  background-position-y: calc(var(--size) / 3 * 2);
+}
+
+.piece-7,
+.piece-8,
+.piece-9 {
+  background-position-y: calc(var(--size) / 3);
+}
+.list::-webkit-scrollbar-track {
+  background-color: #282b30;
+  border-radius: 3px;
+  width: 10px;
+  overflow: hidden;
+}
+
+.list::-webkit-scrollbar {
+  border-radius: 3px;
+  width: 10px;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background: #7289da;
+  border-radius: 3px;
+}
+
+.list::-webkit-scrollbar-button {
+  height: 0;
+}
+
+.header {
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: grid;
+  grid-template: auto / 1fr auto;
+  width: calc(var(--size) * 1.4 + 40px);
+  padding: 10px 0;
+}
+
+.header h2,
+.header p {
+  margin: 0;
+  line-height: 2rem;
+  padding: 5px;
+}
+
+.header p {
+  background-color: #4a4c51;
+  border-radius: 5px;
+  padding: 5px 15px;
+  transition: background-color 0.3s;
+}
+
+.logo {
+  background-image: url(https://cdn.discordapp.com/attachments/901041345815252992/907231617637031936/2560px-International_PokC3A9mon_logo.png);
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-left: 125px !important;
+}
+
+@media only screen and (max-width: 1050px) {
+  :root {
+    --size: 360px;
+  }
+}
