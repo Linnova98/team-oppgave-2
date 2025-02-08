@@ -47,7 +47,7 @@ body {
 /* Piece style (all) */
 .board div div,
 .list div {
-  background-image: url(https://cdn.discordapp.com/attachments/901041345815252992/905445962804240384/wallpaper-cropped.jpg);
+  background-image: url("images/background_pokemon.png");
   background-size: var(--size) var(--size);
   cursor: pointer;
 }
@@ -140,7 +140,7 @@ body {
 }
 
 .logo {
-  background-image: url(https://cdn.discordapp.com/attachments/901041345815252992/907231617637031936/2560px-International_PokC3A9mon_logo.png);
+  background-image: url("images/logo.png");
   background-position: left;
   background-size: contain;
   background-repeat: no-repeat;
